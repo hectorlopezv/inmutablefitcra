@@ -1,4 +1,4 @@
-import { preFormat } from "../testingUtils/mockData";
+import { preFormat } from "../../testingUtils/mockData";
 import {getData, formatter} from "./tableUtils"
 describe("testing Table utils", () => {
 

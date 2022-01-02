@@ -1,7 +1,7 @@
 import {render, waitFor, screen} from '@testing-library/react'
 import React from "react";
 import Chart from "./Chart"
-import {bitcoinPricesMock, bitcoinMaxValueMock} from "../testingUtils/bitcoinPricesData"
+import {bitcoinPricesMock, bitcoinMaxValueMock} from "../../testingUtils/bitcoinPricesData"
 
 
 jest.mock('recharts', () => {

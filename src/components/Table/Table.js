@@ -3,16 +3,8 @@ import { useTable, useFilters, useGlobalFilter } from 'react-table'
 import HeaderTable from "../CryptoTable/HeaderTable/HeaderTable";
 import HeaderBody from "../CryptoTable/HeaderBody/HeaderBody";
 import TableWrapper from "../CryptoTable/TableWrapper/TableWrapper";
-import { getHeaders, getData } from "../../util/tableUtils";
-
-import { matchSorter } from "match-sorter";
-
-function fuzzyTextFilterFn(rows, id, filterValue) {
-  return matchSorter(rows, filterValue, { keys: [(row) => row.values[id]] });
-}
-
-// Let the table remove the filter if the string is empty
-fuzzyTextFilterFn.autoRemove = (val) => !val;
+import { getHeaders, getData } from "../../util/table/tableUtils";
+import {fuzzyTextFilterFn} from "../../util/fuzzySearch/fuzzy"
 
 /**
  * Table Component divided in Sections for it to be easily tested.

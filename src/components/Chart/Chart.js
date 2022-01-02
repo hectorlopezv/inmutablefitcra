@@ -1,5 +1,5 @@
 import { ReferenceLine, AreaChart, XAxis,YAxis, Tooltip, Area, ResponsiveContainer } from "recharts";
-import { formatter } from "../../util/tableUtils"
+import { formatter } from "../../util/table/tableUtils"
 import { memo } from "react";
 const styles = {
     tooltipWrapper: {
