@@ -1,8 +1,7 @@
 import {render, waitFor, screen} from '@testing-library/react'
 import React from "react";
-import Crypto from "./Crypto"
-import {bitcoinPricesMock, bitcoinMaxValueMock} from "../../testingUtils/bitcoinPricesData"
-import { getHistorical } from "../../api/api"
+import CryptoTable from "./CryptoTable"
+import { getCoinsInfo } from "../../api/api"
 
 jest.mock("react-router-dom",()=> {
     return {
@@ -12,7 +11,7 @@ jest.mock("react-router-dom",()=> {
 
 jest.mock("../../api/api", () => {
     return {
-        getHistorical: jest.fn()
+        getCoinsInfo: jest.fn()
     }
 })
 
@@ -35,22 +34,14 @@ afterEach(() => {
 });
 
 
-
-
-
-
 describe("CryptoTable component test",  () => {
-    it("check if Crypto component is working as expected when data  returned from API is null", async () => {
-        getHistorical.mockResolvedValue(({data: bitcoinPricesMock, maxValue: bitcoinMaxValueMock}) )
-        const { debug} =render(<Crypto />)  
+    it("check if CryptoTable component is working as expected when data  returned from API is null", async () => {
+        getCoinsInfo.mockResolvedValue(null)
+        const { debug} =render(<CryptoTable />)  
         await waitFor(() => {
-            expect(screen.getByText("02/01/2021")).toBeInTheDocument()
+            expect(screen.getByRole("status")).toBeInTheDocument()
         }, {
-            timeout: 4000
-        });
-        expect(screen.getByText("05/01/2021")).toBeInTheDocument()
-        
-     
+            timeout: 1000
+        });     
     })
-
 });

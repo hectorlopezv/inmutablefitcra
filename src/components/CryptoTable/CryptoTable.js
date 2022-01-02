@@ -15,6 +15,7 @@ const CryptoTable = () => {
     const getCoins = async () => {
       try {
         const data = await getCoinsInfo()
+        
         settableData(data)
 
       } catch (error) {
