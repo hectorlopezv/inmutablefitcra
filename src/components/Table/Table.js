@@ -14,15 +14,13 @@ const Table = ({ tableData }) => {
   
     const columns = useMemo(() => {
         return   getHeaders()
-      }, [tableData]);
-    
+      }, []);
     
       const data = useMemo(
         () => {
           return  getData(tableData)
         }, [tableData]
       );
-    
     
        const {
             getTableProps,

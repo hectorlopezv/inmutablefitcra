@@ -23,7 +23,8 @@ const HeaderBody = ({ getTableBodyProps, rows, prepareRow }) => {
                     className="cborder"
                   >
                     <div className="flex items-center flex-wrap">
-                     {cell.column.id === "name" && (<img className="h-6 m-1 mr-2"  src={cell.row.original.image}/>)} 
+                      {cell.column.id === "name" && (<img className="h-6 m-1 mr-2" alt="crypto logo"
+                        src={cell.row.original.image} />)} 
                     {cell.render('Cell')}
                   </div>
                 

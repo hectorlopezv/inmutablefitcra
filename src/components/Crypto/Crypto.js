@@ -2,23 +2,23 @@ import { useParams } from "react-router-dom";
 import { getHistorical } from "../../api/api"
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner/Spinner"
-import Chart from "../../Chart/Chart";
+import Chart from "../Chart/Chart";
 /**
  * Custom Component for dynamic CoinInfo.
  * @return {component} custom component for dynamic.
  */
 const Crypto = () => {
-    const params = useParams();
+    const {id} = useParams();
     const [maxValue, setmaxValue] = useState(0);
     const [coinInfo, setcoinInfo] = useState(null);
     useEffect(() => {
         const getHistoric = async () => {
-            const { data, maxValue } = await getHistorical(params.id, 12, 1);
+            const { data, maxValue } = await getHistorical(id, 12, 1);
             setcoinInfo(data)
             setmaxValue(maxValue)
         }
         getHistoric()
-    }, [])
+    }, [id])
     if (coinInfo === null) return <Spinner />
   
     return (

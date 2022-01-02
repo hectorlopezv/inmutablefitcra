@@ -10,7 +10,7 @@ import {
 import App from "./App";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Crypto from "./components/Crypto/Crypto"
-
+import "./index.css"
 ReactDOM.render(
  <BrowserRouter>
     <Routes>
