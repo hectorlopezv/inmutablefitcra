@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .cborder {
+        @apply border-solid border border-gray-200;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+table {
+    text-align: left;
+    position: relative;
+  
+  }
+tr:hover {
+    background-color: rgb(255, 255, 189);
+    cursor: pointer;
+}
+
+
+table, td {
+	font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+}
+
+td, th {
+	padding: 5px;
+    text-align: center;
+    padding: 7px;
+}
+
+#root > div > div > div > svg > g.recharts-layer.recharts-reference-line > text{
+    transform: translateY(-14px);
 }
